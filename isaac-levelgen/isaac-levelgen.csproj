@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,10 +32,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,8 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DumpReader.cs" />
+    <Compile Include="Enums\FloorType.cs" />
+    <Compile Include="GameState.cs" />
+    <Compile Include="Enums\GameStateFlags.cs" />
+    <Compile Include="GameStateInput.cs" />
+    <Compile Include="LayoutGenerator.cs" />
+    <Compile Include="LayoutState.cs" />
+    <Compile Include="Enums\LevelCurse.cs" />
+    <Compile Include="LevelGen.cs" />
+    <Compile Include="Enums\PlayerType.cs" />
+    <Compile Include="Ext\PointExt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rng.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomDescriptor.cs" />
+    <Compile Include="Enums\RoomShape.cs" />
+    <Compile Include="RoomsProvider.cs" />
+    <Compile Include="Enums\RoomType.cs" />
+    <Compile Include="StageLayout.cs" />
+    <Compile Include="Ext\StreamExt.cs" />
+    <Compile Include="Ext\XmlExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
