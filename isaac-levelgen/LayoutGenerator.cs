@@ -15,15 +15,15 @@ namespace isaac_levelgen
             State = state;
         }
 
-        public StageLayout Create(int maxRooms) {
+        public StageLayout Create(int maxRooms, int minDeadEnds) {
             var layout = Generate(maxRooms);
 
             CalculateDeadEnds(layout);
-            if (layout.DeadEnds.Count < 5) {
+            if (layout.DeadEnds.Count < minDeadEnds) {
                 for (var i = 0; i < 5; i++) {
                     AddDeadEnd(layout);
                     CalculateDeadEnds(layout);
-                    if (layout.DeadEnds.Count >= 5)
+                    if (layout.DeadEnds.Count >= minDeadEnds)
                         break;
                 }
 

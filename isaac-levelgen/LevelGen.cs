@@ -94,7 +94,7 @@ namespace isaac_levelgen
             LayoutGen = new LayoutGenerator(Game, State);
             StageLayout layout;
             for (int i = 0; i < 100; i++) {
-                layout = LayoutGen.Create(roomCount);
+                layout = LayoutGen.Create(roomCount, minDeadEnds);
 
                 if (layout.DeadEnds.Count < minDeadEnds)
                     continue;
